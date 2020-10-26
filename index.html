@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Belajar Vuejs</title>
 </head>
+<style>
+    body{
+        margin: 5%;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .active {
+        background: salmon;
+        border: 0;
+        padding: 5px;
+    }
+    .inactive {
+        background-color: #999999;
+        border: 0;
+        padding: 5px;
+    }
+</style>
 <body>
     <div id="app">
         <header>
@@ -16,8 +32,13 @@
             <p>{{ qty }}</p>
             <button @click="tambahqty()">Klik Saya</button>
             <p v-html="url"></p>
-            <img :src="gambar" />
+            <img :src="gambar" width="100" />
         </header>
+        <div>
+            <button @click="menu = 'home' " v-bind:class="{active : menu === 'home' }">Home</button>
+            <button @click="menu = 'about' " v-bind:class="{active : menu === 'about' }">About</button>
+            <button @click="menu = 'blog' " v-bind:class="{active : menu === 'blog' }">Blog</button>
+        </div>
     </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
@@ -30,7 +51,8 @@
         firstname: 'Angga',
         lastname : 'Maulana',
         url : "<a href=''>Test V-html</a>",
-        gambar : "images/logo.png"
+        gambar : "images/logo.png",
+        menu : 'home'
     }
     const vm = new Vue({
         el : '#app',
@@ -45,7 +67,7 @@
             },
             tambahqty : function(){
                 return this.qty++
-            }
+            },
         },
         computed: {
             totalBayar : function(){

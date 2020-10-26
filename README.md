@@ -10,3 +10,4 @@
 - [x] methode parameter
 - [x] Event
 - [x] V-html
+- [x] class Binding
