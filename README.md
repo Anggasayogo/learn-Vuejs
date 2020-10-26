@@ -11,3 +11,4 @@
 - [x] Event
 - [x] V-html
 - [x] class Binding
+- [x] Two way data binding
