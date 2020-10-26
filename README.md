@@ -13,3 +13,4 @@
 - [x] class Binding
 - [x] Two way data binding
 - [x] v-for
+- [x] Directive v-for
