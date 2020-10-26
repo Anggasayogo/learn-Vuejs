@@ -27,9 +27,10 @@
             <h3 v-text="name"></h3>
             <p><input type="text" v-model="name"/></p>
             <div>
-                <ul v-if="kelas.length > 2">
+                <ul v-if="kelas.length">
                     <li v-for="(row,index) of kelas">{{index+1 }}-{{row}}</li>
                 </ul>
+                <li v-else>Kelas Belum Tersedia </li>
                 <ul>
                     <li v-for="row in 5">{{ row }}</li>
                 </ul>

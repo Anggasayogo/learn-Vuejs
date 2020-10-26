@@ -14,3 +14,5 @@
 - [x] Two way data binding
 - [x] v-for
 - [x] Directive v-for
+- [x] Directive v-if
+- [x] Directive v-else
