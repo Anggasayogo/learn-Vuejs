@@ -27,6 +27,9 @@
             <h3 v-text="name"></h3>
             <p><input type="text" v-model="name"/></p>
             <div>
+                <ul>
+                    <li v-for="row in kelas">{{row}}</li>
+                </ul>
                 <p>{{ kelas }}</p>
                 <label><input type="checkbox" v-model="kelas" value="Reactjs"/>React js</label>
                 <label><input type="checkbox" v-model="kelas" value="Vuejs"/>Vuejs</label>

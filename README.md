@@ -12,3 +12,4 @@
 - [x] V-html
 - [x] class Binding
 - [x] Two way data binding
+- [x] v-for
