@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Vuejs</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h3 v-text="name"></h3>
+            <h3>{{ isactive ? 'success' : 'danger' }}</h3>
+            <h3>{{ getname() }}</h3>
+            <h3>{{ namalengkap }}</h3>
+            <h3>{{ qty%2 === 0 ? 'genap' : 'ganjil' }}</h3>
+            <p>{{ qty }}</p>
+            <button @click="tambahqty()">Klik Saya</button>
+            <p v-html="url"></p>
+            <img :src="gambar" />
+        </header>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+<script>
+    const mahasiswa = {
+        name : 'Angga Maulana',
+        kelas : 'Reg.Pagi',
+        isactive : true,
+        qty : 1,
+        firstname: 'Angga',
+        lastname : 'Maulana',
+        url : "<a href=''>Test V-html</a>",
+        gambar : "images/logo.png"
+    }
+    const vm = new Vue({
+        el : '#app',
+        data : mahasiswa,
+        methods : {
+            getname :function(){
+                return `hello, ${this.name}`
+            },
+            changeNmae : function(newname){
+                this.name = newname;
+                return this.getname();
+            },
+            tambahqty : function(){
+                return this.qty++
+            }
+        },
+        computed: {
+            totalBayar : function(){
+                return this.qty * 1000
+            },
+            namalengkap : function(){
+                return `${this.firstname} ${this.lastname}`
+            },
+        },
+    });
+</script>
+</body>
+</html>
